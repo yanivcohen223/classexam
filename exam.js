@@ -1,3 +1,4 @@
+
 $(document).ready(() => {
   //on load greeting
   alert("welcome :)")
@@ -182,9 +183,7 @@ $(`#price_average`).on("click", () => {
 //on the sorted list i was really upset with that exercise it took me alot of effort to search in google for the result
 //so i didnt had time to put effort on the css and final coding
 function best_option(array_of_tv) {
-  array_of_tv.tv
-    .sort((a, b) => (a.price < b.price ? -1 : 1)) //sort by rating
-    .sort((a, b) => (b.rating < a.rating ? 1 : -1));
+  array_of_tv.tv.sort((a, b) => (b.rating != a.rating ? b.rating - a.rating : a.price - b.price)) //sort by rating an price
 
   return array_of_tv.tv[0].tv_model;
 }
