@@ -166,21 +166,23 @@ function price_avg(arr_objects) {
     avg.items_num++;
   }
 
-  return avg.price_avg / avg.items_num; 
+  return avg.price_avg / avg.items_num;
 }
-let avg_price = price_avg(data)
+let avg_price = price_avg(data);
 $(`#price_average`).on("click", () => {
-    let avg_price = price_avg(data)
-    console.log(avg_price.toString());
-    Swal.fire(`The average price of the tv's ins the store are: ${avg_price.toString()}`)
-  });
+  let avg_price = price_avg(data);
+  console.log(avg_price.toString());
+  Swal.fire(
+    `The average price of the tv's ins the store are: ${avg_price.toString()}`
+  );
+});
 
 //function that needto return the best option for the buyer
 //we didnet really learned i think on how to sort a list of objects with key value and not to mention how to sort again
 //on the sorted list i was really upset with that exercise it took me alot of effort to search in google for the result
 //so i didnt had time to put effort on the css and final coding
 function best_option(array_of_tv) {
-    array_of_tv.tv
+  array_of_tv.tv
     .sort((a, b) => (a.price < b.price ? -1 : 1)) //sort by rating
     .sort((a, b) => (b.rating < a.rating ? 1 : -1));
 
@@ -188,5 +190,9 @@ function best_option(array_of_tv) {
 }
 
 $(`#best_tv_op`).on("click", () => {
-    Swal.fire(`The best option tv by price and rating is: <br/> ${JSON.stringify(best_option(data))}`)
-  });
+  Swal.fire(
+    `The best option tv by price and rating is: <br/> ${JSON.stringify(
+      best_option(data)
+    )}`
+  );
+});
