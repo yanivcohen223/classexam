@@ -1,6 +1,6 @@
-//on load greeting
-//$(document).ready(alert("welcome :)"));
-
+$(document).ready(() => {
+  //on load greeting
+  alert("welcome :)")
 // json object that contains the tv's
 const data = {
   tv: [
@@ -195,4 +195,5 @@ $(`#best_tv_op`).on("click", () => {
       best_option(data)
     )}`
   );
+});
 });
